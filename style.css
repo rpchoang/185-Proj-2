@@ -1,18 +1,37 @@
 
-body{background-color: #42414A;}
-.parent_container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    background-color: #42414A;
-    padding: 5px;
+body{background-color: #42414A;
+color: whitesmoke;}
+
+table a.link {
+    color: lightskyblue;
+}
+
+table a.hover {
     color: whitesmoke;
 }
-.child{
-    background-color: lightslategray;
-    border: 1px solid gray;
-    padding: 1px;
-    font-size: 12px;
-    text-align: center;
+
+table a.visited {
+    color: darkseagreen;
+}
+
+table, th, td{
+    border: 1px solid whitesmoke;
+    border-collapse: collapse;
+}
+table tr td {
+    padding:0;  
+}
+table tr td:nth-child(1) {
+    width:200px;
+}
+table tr td:nth-child(2) {
+    width:800px;
+}
+table tr td:nth-child(3) {
+    width:100px;
+}
+table tr td:nth-child(3) {
+    width:100px;
 }
 
 .navbar{
