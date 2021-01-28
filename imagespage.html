@@ -15,32 +15,95 @@
     </div>
 
     <div class = "img_table">
-        <div class= "images"><img src = "images/yeet.png">
+        <div class= "images"><img id="yeet" onclick="openpopout();openpic(1)" src = "images/yeet.png">
         </div>
-        <div class= "images"><img src = "images/srslybro.jpg">
+        <div class= "images"><img id="srsly" onclick="openpopout();openpic(2)" src = "images/srslybro.jpg">
         </div>
-        <div class= "images"><img src = "images/bigbrain.jpg">
+        <div class= "images"><img id="brain" onclick="openpopout();openpic(3)" src = "images/bigbrain.jpg">
         </div>
-        <div class= "images"><img src = "images/twittermeme.png">
+        <div class= "images"><img id="twitter" onclick="openpopout();openpic(4)" src = "images/twittermeme.png">
         </div>
-        <div class= "images"><img src = "images/frontend.png">
+        <div class= "images"><img id="frontend" onclick="openpopout();openpic(5)" src = "images/frontend.png">
         </div>
-        <div class= "images"><img src = "images/freddy.png">
+        <div class= "images"><img id="freddy" onclick="openpopout();openpic(6)" src = "images/freddy.png">
         </div>
-        <div class= "images"><img src = "images/bird.jpg">
+        <div class= "images"><img id="bird" onclick="openpopout();openpic(7)" src = "images/bird.jpg">
         </div>
-        <div class= "images"><img src = "images/cat.jpg">
+        <div class= "images"><img id="cat" onclick="openpopout();openpic(8)" src = "images/cat.jpg">
         </div>
-        <div class= "images"><img src = "images/george lopez.jpg">
+        <div class= "images"><img id="lopez" onclick="openpopout();openpic(9)" src = "images/george lopez.jpg">
         </div>
-        <div class= "images"><img src = "images/Johncena.jpg">
+        <div class= "images"><img id="Cena" onclick="openpopout();openpic(10)" src = "images/Johncena.jpg">
         </div>
-        <div class= "images"><img src = "images/tomnjerry.jpg">
+        <div class= "images"><img id="tnj" onclick="openpopout();openpic(11)" src = "images/tomnjerry.jpg">
         </div>
-        <div class= "images"><img src = "images/srslybro.jpg">
+        <div class= "images"><img id="danny" onclick="openpopout();openpic(12)" src = "images/dannnydevito.jpg">
         </div>
 
+
     </div>
+
+    <div id="imgpopout" class="popout">
+        <img class="photoenlrg" id="myimg">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("imgpopout");
+        var img;
+        var imgpopout = document.getElementById("myimg");
+
+        function openpopout() {
+            modal.style.display = "block";
+        }
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        function openpic(n){
+            if(n == 1){
+                img = document.getElementById("yeet");
+            } else if(n == 2){
+                img = document.getElementById("srsly");
+            } else if(n == 3){
+                img = document.getElementById("brain");
+            } else if(n == 4){
+                img = document.getElementById("twitter");
+            } else  if(n == 5){
+                img = document.getElementById("frontend");
+            } else  if(n == 6){
+                img = document.getElementById("freddy");
+            } else  if(n == 7){
+                img = document.getElementById("bird");
+            } else   if(n == 8){
+                img = document.getElementById("cat");
+            } else  if(n == 9){
+                img = document.getElementById("lopez");
+            } else if(n == 10){
+                img = document.getElementById("Cena");
+            } else if(n == 11){
+                img = document.getElementById("tnj");
+            } else if(n == 12){
+                img = document.getElementById("danny");
+            } 
+            imgpopout.src = img.src;
+
+        }
+        //https://www.codeblocq.com/2016/06/Differentiate-background-and-foreground-div-clicks/
+        modal.onclick = function (e) {
+            var ev = e || window.event;
+            if(e.target !== this)
+                return;
+            else{
+                closephoto();
+            }
+        }
+
+
+        function donothing(){}
+        // When the user clicks on <span> (x), close the modal
+        function closephoto() { 
+          modal.style.display = "none";
+        }
+        </script>
 
 </body>
 
