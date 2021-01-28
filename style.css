@@ -129,17 +129,50 @@ https://css-tricks.com/piecing-together-approaches-for-a-css-masonry-layout/
 }
 
 .vid_table{
-    margin: auto;
-    columns: 580px 3;
-    column-gap: 10px;
+    margin: 0 auto;
+    padding-top: 30px;
+    columns: 560px 3;
+    column-gap: 30x;
+    text-align: center;
+    height: auto;
 }
 .videos{
-    max-width: 100%;
+    max-width: 560px;
     margin: 0 10px 10px 0;
     display: inline-block;
     width: 100%;
 }
 
+.scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    opacity: 0;
+  }
+
+.showBtn {
+    opacity: 1;
+    transform: translateY(0)
+  }
+
+.alert {
+    display: none;
+    background-color: red;
+    color: black;
+}
+
+.good{
+    display: none;
+    background-color: chartreuse;
+    color: white;
+}
+
+.subbutton{
+    background-color: black;
+    color: white;
+    width: 100px;
+}
 /*
 .img_table{
     display: flex;

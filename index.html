@@ -19,9 +19,10 @@
     </div>
 <h1>Welcome to Ronald's Page</h1>
 
+
 <form>
     <label for="fname">Please Enter Email:</label><br>
-    <input type="text" id ="email" value="EMAIL"><br><br>
+    <input type="email" id ="idemail" value="E-mail"><br><br>
     <!--
     <label for="lname">Last Name:</label><br>
     <input type="text" id ="fname" value="LAST NAME"><br><br>
@@ -31,7 +32,39 @@
     <input type="Radio" name="mythos" value="norse">Norse<br>
     <input type="Radio" name="mythos" value="greek">Greek<br><br>
             //-->
-    <input type = "submit" value="Submit">
+    <div class="subbutton" onclick = "validateEmail()" background-color="black" color="white"><p>Validate email</p></div>
+
+    <div class="alert" id="alertnotice">
+        <span class="closebutton" onclick="this.parentElement.style.display='none';">&times;</span>
+        <p>ERROR INVALID EMAIL</p>
+    </div>
+    
+    <div class="good" id="emailok">
+        <span class="closebutton" onclick="this.parentElement.style.display='none';">&times;</span>
+        <p>Good email</p>
+    </div>
+
+    <script>
+        function validateEmail() 
+        {
+            var goodemail = document.getElementById("emailok");
+            var errmsg = document.getElementById("alertnotice");
+            goodemail.style.display ="none";
+            goodemail.style.dispaly ="none";
+
+
+            //https://stackoverflow.com/questions/39356826/how-to-check-if-it-a-text-input-has-a-valid-email-format-in-reactjs
+            let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;            var entry = document.getElementById("emailID");
+            var inputval = document.getElementById("idemail").value;
+            if (re.test(inputval)){
+                goodemail.style.display = "block";
+            }else{
+                errmsg.style.display = "block";
+            }
+        }  
+    </script>
+
+
 </form>
 
     

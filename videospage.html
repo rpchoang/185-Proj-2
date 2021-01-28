@@ -5,6 +5,8 @@
     <title>Ronald Hoang CS185 PA1</title>
 </head>
 <body>
+    <button class="scrollToTop">Back To Top</button>
+
     <div class = "navbar">
         <a href = "index.html"> Text</a>
         <a href ="imagespage.html"> Images </a>
@@ -17,5 +19,29 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/fvtQYsckLxk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="Videos"></iframe>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/AbonVshOLf0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="Videos"></iframe>
     </div>
+
+    <script>
+        var rootElement = document.documentElement;
+        var scrollToTopBtn = document.querySelector(".scrollToTop")
+        
+        function handleScroll() {
+            var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
+            if ((rootElement.scrollTop / scrollTotal ) > 0.25) {
+                scrollToTopBtn.classList.add("showBtn");
+            } else {
+                scrollToTopBtn.classList.remove("showBtn")
+            }
+        }
+
+        function scrollToTop() {
+            rootElement.scrollTo({
+            top: 0,
+            behavior: "smooth"
+            })
+        }
+
+        scrollToTopBtn.addEventListener("click", scrollToTop)
+        document.addEventListener("scroll", handleScroll)
+    </script>
 </body>
 </html>
