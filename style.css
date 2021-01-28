@@ -1,6 +1,8 @@
 
-body{background-color: #42414A;
-color: whitesmoke;}
+body{
+background-color: #42414A;
+color: whitesmoke;
+}
 
 table a.link {
     color: lightskyblue;
@@ -39,6 +41,7 @@ table tr td:nth-child(3) {
     background-color: #333;
 }
 
+
 .navbar a{
     float: left;
     color: whitesmoke;
@@ -53,27 +56,50 @@ table tr td:nth-child(3) {
     color: black;
 }
 
+.navbar a.active-page{
+    background-color: #ADD8E6;
+    color: black;
+}
+
 input[type=text] {
     background-color:#ddd;
     color:black;
 }
 
 img {
-    display: block;
     max-width:300px;
-    width: auto;
+    width: 100%;
     height: auto;
   }
 
 
 .img_table{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 10px 100px;
-    justify-items: center;
+    margin: auto;
+    columns: 320px 4;
+    column-gap: 1rem;
 }
 .images{
-    padding: 10px 100px;
-    font-size: 12px;
-    text-align: center;
+    max-width: 100%;
+    margin: 0 1rem 1rem 0;
+    display: inline-block;
+    width: 100%;
 }
+
+/*
+.img_table{
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 1000px;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    height: auto;
+}
+.images{
+    flex: 1;
+    flex-basis: 200px;
+    margin: 0 1rem 1rem 0;
+    padding: 10px;
+    align-self: column;
+}
+*/
